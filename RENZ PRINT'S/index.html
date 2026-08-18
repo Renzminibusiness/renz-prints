@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Renz Prints | Online Ordering</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<section class="welcome">
+    <div class="overlay">
+        <h1>RENZ PRINTS</h1>
+        <p>High Quality Printing Services</p>
+        <button id="startBtn" type="button">Let's Order</button>
+    </div>
+</section>
+
+<section class="customer hide">
+    <div class="card">
+        <h2>Customer Information</h2>
+        <input id="fullName" type="text" placeholder="Full Name">
+        <input id="contactNumber" type="text" placeholder="Contact Number">
+        <input id="gradeSection" type="text" placeholder="Grade & Section">
+        <input id="messengerName" type="text" placeholder="Messenger Name (Optional)">
+        <button id="nextCustomer" type="button">Next →</button>
+    </div>
+</section>
+
+<section class="products hide" id="productsPage">
+    <h2>Products We Offer</h2>
+
+    <div class="grid">
+
+        <div class="product">
+            <img src="images/acrylic.jpg" alt="Acrylic Keychain">
+            <h3>Acrylic Keychain</h3>
+            <p>₱30 each</p>
+            <button type="button" onclick="openAcrylic()">Order Now</button>
+        </div>
+
+        <div class="product">
+            <img src="images/document.jpg" alt="Document Printing">
+            <h3>Document Printing</h3>
+            <p>Starting at ₱6</p>
+            <button type="button" onclick="openDocument()">Order Now</button>
+        </div>
+
+        <div class="product">
+            <img src="images/polaroid.jpg" alt="Polaroid Prints">
+            <h3>Polaroid Prints</h3>
+            <p>₱30 / 10 pcs</p>
+            <button type="button" onclick="openPolaroid()">Order Now</button>
+        </div>
+
+        <!-- BUY 1 TAKE 1 MINI PHOTO STRIPS -->
+        <div class="product">
+            <img
+                src="images/mini-photo-strips.jpg"
+                alt="Buy 1 Take 1 Mini Photo Strips"
+            >
+            <h3>Buy 1 Take 1</h3>
+            <p>Mini Photo Strips</p>
+            <button type="button" onclick="openMiniPhotoStrips()">Order Now</button>
+        </div>
+
+        <!-- 3-IN-1 BUNDLE -->
+        <div class="product">
+            <img
+                src="images/3-in-1-bundle.jpg"
+                alt="3-in-1 Bundle"
+            >
+            <h3>3-in-1 Bundle</h3>
+            <p>Acrylic + Photo Strips + 3 pcs Polaroid</p>
+           <button type="button" onclick="openBundle()">Order Now</button>
+        </div>
+
+    </div>
+</section>
+
+<section class="order-page hide" id="acrylicPage">
+    <div class="order-container">
+        <button class="back-btn" type="button" onclick="backToProducts()">← Back</button>
+        <h2>Choose Acrylic Size</h2>
+        <p class="page-description">Select the size of your acrylic keychain.</p>
+
+        <div class="size-grid">
+            <div class="size-card" onclick="selectAcrylicSize('3.5 × 7.5 cm')">
+                <img src="images/acrylic-35x75.jpg" alt="3.5 x 7.5 cm">
+                <h3>3.5 × 7.5 cm</h3><p>₱30</p>
+            </div>
+            <div class="size-card" onclick="selectAcrylicSize('2.8 × 5.3 cm')">
+                <img src="images/acrylic-28x53.jpg" alt="2.8 x 5.3 cm">
+                <h3>2.8 × 5.3 cm</h3><p>₱30</p>
+            </div>
+            <div class="size-card" onclick="selectAcrylicSize('3.0 × 5.6 cm')">
+                <img src="images/acrylic-30x56.jpg" alt="3.0 x 5.6 cm">
+                <h3>3.0 × 5.6 cm</h3><p>₱30</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="order-page hide" id="acrylicDesignPage">
+    <div class="order-container">
+        <button class="back-btn" type="button" onclick="backToAcrylicSize()">← Back</button>
+        <h2>Choose Design</h2>
+        <p id="selectedAcrylicSize"></p>
+
+        <div id="design35" class="design-content hide">
+
+    <h3>EXAMPLE DESIGNS</h3>
+
+    <div class="example-design-grid">
+
+        <div class="example-design-card">
+            <img
+                src="images/acrylic-35-design1.jpg"
+                alt="Design 1"
+            >
+            <p>Design 1</p>
+        </div>
+
+        <div class="example-design-card">
+            <img
+                src="images/acrylic-35-design2.jpg"
+                alt="Design 2"
+            >
+            <p>Design 2</p>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="acrylic35Design">
+            Select Design
+        </label>
+
+        <select id="acrylic35Design">
+
+            <option value="">
+                Choose a design
+            </option>
+
+            <option value="1">
+                Design 1
+            </option>
+
+            <option value="2">
+                Design 2
+            </option>
+
+        </select>
+
+    </div>
+
+    <h3>Upload Your Best 3 Pictures</h3>
+
+    <div class="upload-box">
+
+        <label for="acrylic35Upload">
+            📤 Choose Image
+        </label>
+
+        <input
+            type="file"
+            id="acrylic35Upload"
+            accept="image/*"
+            multiple
+        >
+
+    </div>
+
+</div>
+
+
+<div id="design28" class="design-content hide">
+
+    <h3>UPLOAD YOUR BEST 2 PICTURE</h3>
+
+    <div class="upload-box">
+
+        <label for="acrylic28Upload">
+            📤 CLICK IT NOW
+        </label>
+
+        <input
+            type="file"
+            id="acrylic28Upload"
+            accept="image/*"
+            multiple
+        >
+
+    </div>
+
+</div>
+
+        <div id="design28" class="design-content hide">
+            <h3>UPLOAD YOUR BEST 2 PICTURE</h3>
+            <div class="upload-box">
+                <label for="acrylic28Upload">📤 CLICK IT NOW</label>
+                <input type="file" id="acrylic28Upload" accept="image/*"
+                multiple>
+            </div>
+        </div>
+
+       <div id="design30" class="design-content hide">
+
+    <h3>Choose Design Type</h3>
+
+    <div class="choice-grid">
+
+        <!-- IMAGE -->
+        <button
+            class="choice-button"
+            type="button"
+            onclick="chooseAcrylicType('Picture Design')"
+        >
+            🖼️
+            <span>IMAGE</span>
+        </button>
+
+        <!-- SONG -->
+        <button
+            class="choice-button"
+            type="button"
+            onclick="chooseAcrylicType('Song Design')"
+        >
+            🎵
+            <span>SONG</span>
+        </button>
+
+        <!-- IMAGE + SONG -->
+        <button
+            class="choice-button"
+            type="button"
+            onclick="chooseAcrylicType('Image + Song')"
+        >
+            🖼️🎵
+            <span>IMAGE + SONG</span>
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     IMAGE DESIGN
+========================= -->
+
+<div id="pictureDesignForm" class="extra-form hide">
+
+    <h3>EXAMPLE OF IMAGE</h3>
+
+    <p class="page-description">
+        Front and back example of the Image Design.
+    </p>
+
+    <div class="example-design-grid">
+
+        <div class="example-design-card">
+            <img
+                src="images/image-front.jpg"
+                alt="Front example of Image Design"
+            >
+            <p>Front</p>
+        </div>
+
+        <div class="example-design-card">
+            <img
+                src="images/image-back.jpg"
+                alt="Back example of Image Design"
+            >
+            <p>Back</p>
+        </div>
+
+    </div>
+
+    <div class="upload-box">
+
+        <label for="acrylicPictureUpload">
+            📤 Choose File
+        </label>
+
+        <input
+            type="file"
+            id="acrylicPictureUpload"
+            accept="image/*"
+            multiple
+        >
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     SONG DESIGN
+========================= -->
+
+<div id="songDesignForm" class="extra-form hide">
+
+    <h3>EXAMPLE PICTURE OF SONG</h3>
+
+    <p class="page-description">
+        Front and back examples of the Song Design.
+    </p>
+
+    <div class="example-design-grid">
+
+        <div class="example-design-card">
+
+            <img
+                src="images/song-front.jpg"
+                alt="Front example of Song Design"
+            >
+
+            <p>Front</p>
+
+        </div>
+
+        <div class="example-design-card">
+
+            <img
+                src="images/song-back.jpg"
+                alt="Back example of Song Design"
+            >
+
+            <p>Back</p>
+
+        </div>
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="songTitle">
+            Song Title
+        </label>
+
+        <input
+            type="text"
+            id="songTitle"
+            placeholder="Enter song title"
+        >
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="songArtist">
+            Song Artist
+        </label>
+
+        <input
+            type="text"
+            id="songArtist"
+            placeholder="Enter song artist"
+        >
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     IMAGE + SONG DESIGN
+========================= -->
+
+<div id="imageSongDesignForm" class="extra-form hide">
+
+    <h3>EXAMPLE OF PICTURE + SONG</h3>
+
+    <p class="page-description">
+        Front and back examples of the Image + Song design.
+    </p>
+
+    <div class="example-design-grid">
+
+        <div class="example-design-card">
+
+            <img
+                src="images/image-song-front.jpg"
+                alt="Front example of Image + Song"
+            >
+
+            <p>Front</p>
+
+        </div>
+
+        <div class="example-design-card">
+
+            <img
+                src="images/image-song-back.jpg"
+                alt="Back example of Image + Song"
+            >
+
+            <p>Back</p>
+
+        </div>
+
+    </div>
+
+    <div class="upload-box">
+
+        <label for="imageSongPictureUpload">
+            📤 Choose Picture
+        </label>
+
+        <input
+            type="file"
+            id="imageSongPictureUpload"
+            accept="image/*"
+        >
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="imageSongTitle">
+            Song Title
+        </label>
+
+        <input
+            type="text"
+            id="imageSongTitle"
+            placeholder="Enter song title"
+        >
+
+    </div>
+
+    <div class="form-group">
+
+        <label for="imageSongArtist">
+            Song Artist
+        </label>
+
+        <input
+            type="text"
+            id="imageSongArtist"
+            placeholder="Enter song artist"
+        >
+
+    </div>
+
+</div>
+
+
+        <button class="continue-btn" type="button" onclick="continueAcrylic()">Continue →</button>
+    </div>
+</section>
+
+<section class="order-page hide" id="documentPage">
+    <div class="order-container">
+        <button class="back-btn" type="button" onclick="backToProducts()">← Back</button>
+        <h2>Document Printing</h2>
+        <p class="page-description">Choose your printing service.</p>
+
+        <div class="choice-grid document-choice-grid">
+
+    <button
+        class="document-choice-card"
+        type="button"
+        onclick="selectDocumentService('Text Only')"
+    >
+        <img
+            src="images/document-text-only.jpg"
+            alt="Text Only example"
+        >
+        <span>Text Only</span>
+    </button>
+
+
+    <button
+        class="document-choice-card"
+        type="button"
+        onclick="selectDocumentService('Picture Printing')"
+    >
+        <img
+            src="images/document-picture-printing.jpg"
+            alt="Picture Printing example"
+        >
+        <span>Picture Printing</span>
+    </button>
+
+
+    <button
+        class="document-choice-card"
+        type="button"
+        onclick="selectDocumentService('Front Page')"
+    >
+        <img
+            src="images/document-front-page.jpg"
+            alt="Front Page example"
+        >
+        <span>Front Page</span>
+    </button>
+
+
+    <button
+        class="document-choice-card"
+        type="button"
+        onclick="selectDocumentService('Text and Image')"
+    >
+        <img
+            src="images/document-text-with-image.jpg"
+            alt="Text with Image example"
+        >
+        <span>Text with Image</span>
+    </button>
+
+</div>
+</section>
+<section class="order-page hide" id="documentOptionsPage">
+    <div class="order-container">
+        <button class="back-btn" type="button" onclick="backToDocumentServices()">← Back</button>
+        <h2 id="documentServiceTitle">Document Printing</h2>
+        <h3>DOCUMENT EXAMPLE</h3>
+
+<div class="selected-document-example">
+
+    <img
+        id="documentExampleImage"
+        src=""
+        alt="Document example"
+    >
+
+    <p id="documentExampleText"></p>
+
+</div>
+        <div class="form-group">
+            <label>Upload Your File</label>
+            <div class="upload-box">
+                <input type="file" id="documentUpload" accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png">
+            </div>
+        </div>
+
+        <div class="form-group" id="colorGroup">
+    <label>Color Type</label>
+    <select id="documentColor">
+        <option value="">Select Color Type</option>
+        <option value="Black & White">Black & White</option>
+        <option value="Partially Colored">Partially Colored</option>
+        <option value="Fully Colored">Fully Colored</option>
+    </select>
+</div>
+
+        <div class="form-group">
+    <label>Paper Size</label>
+    <select id="documentSize">
+        <option value="">Select Paper Size</option>
+        <option value="A4">A4</option>
+        <option value="Short">Short</option>
+        <option value="Long">Long</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label>Quantity</label>
+    <input 
+        type="number" 
+        id="documentQty" 
+        value="1"
+        min="1">
+</div>
+        <div class="price-box">
+            <span>Price</span>
+            <strong id="documentPrice">₱0</strong>
+        </div>
+
+        <button class="continue-btn" type="button" onclick="continueDocument()">Continue →</button>
+    </div>
+</section>
+<section class="order-page hide" id="miniPhotoStripsPage">
+    <div class="order-container">
+
+        <button class="back-btn" type="button" onclick="backToProducts()">
+            ← Back
+        </button>
+
+        <h2>Buy 1 Take 1 Mini Photo Strips</h2>
+
+        <div class="selected-document-example">
+            <img
+                src="images/mini-photo-strips.jpg"
+                alt="Mini Photo Strips Example"
+            >
+        </div>
+
+        <h3>SELECT BEST 3 PICTURES</h3>
+
+        <div class="upload-box">
+            <label for="miniPhotoStripsUpload">
+                📤 Choose Your Files
+            </label>
+
+            <input
+                type="file"
+                id="miniPhotoStripsUpload"
+                accept="image/*"
+                multiple
+            >
+        </div>
+
+    </div>
+    <button
+    type="button"
+    class="order-btn"
+    onclick="submitMiniPhotoStripsOrder()"
+>
+    Order Now
+</button>
+</section>
+<section class="order-page hide" id="bundlePage">
+    <div class="order-container">
+
+        <button class="back-btn" type="button" onclick="backToProducts()">
+            ← Back
+        </button>
+
+        <h2>3-in-1 Bundle</h2>
+
+        <div class="selected-document-example">
+
+            <img
+                src="images/3-in-1-bundle.jpg"
+                alt="3-in-1 Bundle Example"
+            >
+
+            <p>3-IN-1 BUNDLE</p>
+            <p>Acrylic + Photo Strips + 3 pcs Polaroid</p>
+
+        </div>
+
+        <h3>SELECT BEST 3 PICTURES</h3>
+
+        <div class="upload-box">
+
+            <label for="bundleUpload">
+                📤 Choose Your Files
+            </label>
+
+            <input
+                type="file"
+                id="bundleUpload"
+                accept="image/*"
+                multiple
+            >
+
+        </div>
+
+    </div>
+<button
+    type="button"
+    class="order-btn"
+    onclick="submitBundleOrder()"
+>
+    Order Now
+</button>
+</section>
+<section class="order-page hide" id="polaroidPage">
+
+    <div class="order-container">
+
+        <button
+            class="back-btn"
+            type="button"
+            onclick="backToProducts()"
+        >
+            ← Back
+        </button>
+
+        <h2>Polaroid Prints</h2>
+
+        <p class="page-description">
+            Choose your finish.
+        </p>
+
+        <div class="choice-grid">
+
+            <!-- GLOSSY -->
+            <button
+                class="choice-button"
+                type="button"
+                onclick="selectPolaroid('Glossy')"
+            >
+                <img
+                    src="images/polaroid-glossy.jpg"
+                    alt="Glossy Polaroid"
+                >
+
+                <span>
+                    <strong>GLOSSY</strong><br>
+                    <b>10 pcs = ₱30</b>
+                </span>
+            </button>
+
+
+            <!-- SATIN -->
+            <button
+                class="choice-button"
+                type="button"
+                onclick="selectPolaroid('Satin')"
+            >
+                <img
+                    src="images/polaroid-satin.jpg"
+                    alt="Satin Polaroid"
+                >
+
+                <span>
+                    <strong>SATIN</strong><br>
+                    <b>10 pcs = ₱45</b>
+                </span>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="order-page hide" id="polaroidOptionsPage">
+
+    <div class="order-container">
+
+        <button
+            class="back-btn"
+            type="button"
+            onclick="backToPolaroid()"
+        >
+            ← Back
+        </button>
+
+        <h2 id="polaroidTitle">Glossy Polaroid Prints</h2>
+
+
+        <!-- SELECTED FINISH SAMPLE -->
+        <div class="selected-polaroid-example">
+
+            <img
+                id="selectedPolaroidExampleImage"
+                src=""
+                alt="Polaroid example"
+            >
+
+            <p id="selectedPolaroidExampleText"></p>
+
+        </div>
+
+
+        <p>
+            Upload <strong id="photoCount">10</strong> pictures.
+        </p>
+
+
+        <!-- ISANG CHOOSE FILE LANG -->
+        <div class="upload-box">
+
+            <input
+                type="file"
+                id="polaroidUpload"
+                accept="image/*"
+                multiple
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Quantity (10 pictures per set)
+            </label>
+
+            <div class="quantity-row">
+
+                <button
+                    type="button"
+                    onclick="changePolaroidQty(-1)"
+                >
+                    −
+                </button>
+
+                <strong id="polaroidQty">1</strong>
+
+                <button
+                    type="button"
+                    onclick="changePolaroidQty(1)"
+                >
+                    +
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="price-box">
+
+            <span>Total</span>
+
+            <strong id="polaroidPrice">₱30</strong>
+
+        </div>
+
+
+        <button
+            class="continue-btn"
+            type="button"
+            onclick="continuePolaroid()"
+        >
+            Continue →
+        </button>
+
+    </div>
+
+</section>
+
+<section class="order-page hide" id="summaryPage">
+    <div class="order-container">
+        <h2>Order Summary</h2>
+        <div id="summaryContent"></div>
+        <button class="continue-btn" type="button" onclick="submitOrder()">Submit Order</button>
+    </div>
+</section>
+
+<section class="order-page hide" id="successPage">
+    <div class="order-container">
+        <h2>Thank You! 🎉</h2>
+        <p>Thank you for ordering from <strong>Renz Prints</strong>!</p>
+        <p>Natanggap na namin ang iyong order. Makakatanggap ka ng update sa iyong contact number o Messenger kapag handa na ang iyong order.</p>
+        <button class="continue-btn" type="button" onclick="location.reload()">Back to Home</button>
+    </div>
+</section>
+
+<script>
+/* ================================
+   RENZ PRINTS - MAIN JAVASCRIPT
+================================ */
+
+const welcome = document.querySelector(".welcome");
+const customer = document.querySelector(".customer");
+const products = document.getElementById("productsPage");
+
+const acrylicPage = document.getElementById("acrylicPage");
+const acrylicDesignPage = document.getElementById("acrylicDesignPage");
+
+const documentPage = document.getElementById("documentPage");
+const documentOptionsPage = document.getElementById("documentOptionsPage");
+
+const polaroidPage = document.getElementById("polaroidPage");
+const polaroidOptionsPage = document.getElementById("polaroidOptionsPage");
+
+const miniPhotoStripsPage =
+    document.getElementById("miniPhotoStripsPage");
+
+const bundlePage =
+    document.getElementById("bundlePage");
+const miniPhotoStripsUpload =
+    document.getElementById("miniPhotoStripsUpload");
+
+const bundleUpload =
+    document.getElementById("bundleUpload");    
+const summaryPage = document.getElementById("summaryPage");
+const successPage = document.getElementById("successPage");
+
+let selectedAcrylicSize = "";
+let selectedAcrylicType = "";
+let selectedDocumentService = "";
+let selectedPolaroidFinish = "";
+let polaroidQty = 1;
+let currentOrder = null;
+
+function topPage() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+document.getElementById("startBtn").addEventListener("click", () => {
+    welcome.classList.add("hide");
+    customer.classList.remove("hide");
+    topPage();
+});
+
+document.getElementById("nextCustomer").addEventListener("click", () => {
+    const fullName = document.getElementById("fullName").value.trim();
+    const contact = document.getElementById("contactNumber").value.trim();
+    const section = document.getElementById("gradeSection").value.trim();
+    const messenger = document.getElementById("messengerName").value.trim();
+
+    if (!fullName) {
+        alert("Please enter your full name.");
+        return;
+    }
+
+    if (!contact) {
+        alert("Please enter your contact number.");
+        return;
+    }
+
+    if (!section) {
+        alert("Please enter your grade & section.");
+        return;
+    }
+
+    localStorage.setItem(
+        "renzPrintsCustomer",
+        JSON.stringify({
+            fullName,
+            contact,
+            section,
+            messenger
+        })
+    );
+
+    customer.classList.add("hide");
+    products.classList.remove("hide");
+    topPage();
+});
+
+function hideAllPages() {
+    [
+        welcome,
+        customer,
+        products,
+        acrylicPage,
+        acrylicDesignPage,
+        documentPage,
+        documentOptionsPage,
+        polaroidPage,
+        polaroidOptionsPage,
+        miniPhotoStripsPage,
+        bundlePage,
+        summaryPage,
+        successPage
+    ].forEach(el => el.classList.add("hide"));
+}
+
+function showPage(page) {
+    hideAllPages();
+    page.classList.remove("hide");
+    topPage();
+}
+
+function backToProducts() {
+    showPage(products);
+}
+
+function openAcrylic() {
+    showPage(acrylicPage);
+}
+
+function selectAcrylicSize(size) {
+    selectedAcrylicSize = size;
+    selectedAcrylicType = "";
+
+    document.getElementById("selectedAcrylicSize").textContent =
+        "Selected Size: " + size + " • ₱30";
+
+    // HIDE ALL
+    document.getElementById("design35").classList.add("hide");
+    document.getElementById("design28").classList.add("hide");
+    document.getElementById("design30").classList.add("hide");
+
+    document.getElementById("pictureDesignForm").classList.add("hide");
+    document.getElementById("songDesignForm").classList.add("hide");
+    document.getElementById("imageSongDesignForm").classList.add("hide");
+
+
+    // 3.5 × 7.5 cm = IMAGE ONLY
+    if (size === "3.5 × 7.5 cm") {
+        document.getElementById("design35").classList.remove("hide");
+    }
+
+
+    // 2.8 × 5.3 cm = IMAGE ONLY
+    if (size === "2.8 × 5.3 cm") {
+        document.getElementById("design28").classList.remove("hide");
+    }
+
+
+    // 3.0 × 5.6 cm = CHOOSE DESIGN
+    if (size === "3.0 × 5.6 cm") {
+        document.getElementById("design30").classList.remove("hide");
+    }
+
+
+    showPage(acrylicDesignPage);
+}
+
+function chooseAcrylicType(type) {
+
+    selectedAcrylicType = type;
+
+    // Hide all design forms
+    document
+        .getElementById("pictureDesignForm")
+        .classList.add("hide");
+
+    document
+        .getElementById("songDesignForm")
+        .classList.add("hide");
+
+    document
+        .getElementById("imageSongDesignForm")
+        .classList.add("hide");
+
+
+    // =========================
+    // IMAGE
+    // =========================
+
+    if (type === "Picture Design") {
+
+        const imagePage =
+            document.getElementById("pictureDesignForm");
+
+        imagePage.classList.remove("hide");
+
+        imagePage.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+        return;
+    }
+
+
+    // =========================
+    // SONG
+    // =========================
+
+    if (type === "Song Design") {
+
+        const songPage =
+            document.getElementById("songDesignForm");
+
+        songPage.classList.remove("hide");
+
+        songPage.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+        return;
+    }
+
+
+    // =========================
+    // IMAGE + SONG
+    // =========================
+
+    if (type === "Image + Song") {
+
+        const imageSongPage =
+            document.getElementById("imageSongDesignForm");
+
+        imageSongPage.classList.remove("hide");
+
+        imageSongPage.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+        return;
+    }
+}
+
+function backToAcrylicSize() {
+    showPage(acrylicPage);
+}
+
+function continueAcrylic() {
+
+    if (!selectedAcrylicSize) {
+        alert("Please select an acrylic size.");
+        return;
+    }
+
+
+    if (
+        selectedAcrylicSize === "3.0 × 5.6 cm" &&
+        !selectedAcrylicType
+    ) {
+        alert("Please choose a design type.");
+        return;
+    }
+
+
+    let songTitle = "";
+    let songArtist = "";
+
+
+    // =========================
+    // SONG
+    // =========================
+
+    if (selectedAcrylicType === "Song Design") {
+
+        songTitle =
+            document.getElementById("songTitle").value.trim();
+
+        songArtist =
+            document.getElementById("songArtist").value.trim();
+
+        if (!songTitle) {
+            alert("Please enter the song title.");
+            return;
+        }
+
+        if (!songArtist) {
+            alert("Please enter the artist.");
+            return;
+        }
+    }
+
+
+    // =========================
+    // IMAGE + SONG
+    // =========================
+
+    if (selectedAcrylicType === "Image + Song") {
+
+        const imageInput =
+            document.getElementById("imageSongPictureUpload");
+
+        songTitle =
+            document.getElementById("imageSongTitle").value.trim();
+
+        songArtist =
+            document.getElementById("imageSongArtist").value.trim();
+
+
+        if (
+            !imageInput ||
+            imageInput.files.length !== 1
+        ) {
+            alert("Please upload 1 picture.");
+            return;
+        }
+
+        if (!songTitle) {
+            alert("Please enter the song title.");
+            return;
+        }
+
+        if (!songArtist) {
+            alert("Please enter the artist.");
+            return;
+        }
+    }
+
+
+    // =========================
+    // CREATE ORDER
+    // =========================
+
+    let acrylic35Design = "";
+
+if (selectedAcrylicSize === "3.5 × 7.5 cm") {
+    const designSelect = document.getElementById("acrylic35Design");
+
+    if (!designSelect || !designSelect.value) {
+        alert("Please select a design.");
+        return;
+    }
+
+    acrylic35Design =
+        "Design " + designSelect.value;
+}
+   currentOrder = {
+
+    product: "Acrylic Keychain",
+
+    detail:
+    selectedAcrylicSize +
+    (
+        acrylic35Design
+            ? " • " + acrylic35Design
+            : " * " +
+              (
+                  selectedAcrylicType === "Image + Song"
+                      ? "SONG + IMAGE"
+                      : selectedAcrylicType.replace(" Design", "").toUpperCase()
+              )
+    ) +
+        (
+            songTitle
+                ? " * " + songTitle
+                : ""
+        ) +
+        (
+            songArtist
+                ? " * " + songArtist
+                : ""
+        ),
+
+    type: selectedAcrylicType || "Picture",
+
+    price: 30,
+
+    songTitle: songTitle,
+
+    songArtist: songArtist
+};
+
+
+showSummary();
+}
+
+function openDocument() {
+    showPage(documentPage);
+}
+
+function selectDocumentService(service) {
+    selectedDocumentService = service;
+
+    document.getElementById("documentServiceTitle").textContent = service;
+
+    const exampleImage =
+        document.getElementById("documentExampleImage");
+
+    const exampleText =
+        document.getElementById("documentExampleText");
+
+    if (service === "Text Only") {
+        exampleImage.src = "images/document-text-only.jpg";
+        exampleText.textContent = "Text Only";
+    }
+
+    if (service === "Picture Printing") {
+        exampleImage.src = "images/document-picture-printing.jpg";
+        exampleText.textContent = "Picture Printing";
+    }
+
+    if (service === "Front Page") {
+        exampleImage.src = "images/document-front-page.jpg";
+        exampleText.textContent = "Front Page";
+    }
+
+    if (service === "Text and Image") {
+        exampleImage.src = "images/document-text-with-image.jpg";
+        exampleText.textContent = "Text with Image";
+    }
+
+    showPage(document.getElementById("documentOptionsPage"));
+}
+
+const documentPrices = {
+    "Text Only": {
+        "Black & White": {
+            A4: 6,
+            Short: 6,
+            Long: 7
+        },
+        "Partially Colored": {
+            A4: 7,
+            Short: 7,
+            Long: 8
+        },
+        "Fully Colored": {
+            A4: 10,
+            Short: 9,
+            Long: 10
+        }
+    },
+
+    "Picture Printing": {
+        "Black & White": {
+            A4: 8,
+            Short: 8,
+            Long: 10
+        },
+        "Partially Colored": {
+            A4: 15,
+            Short: 12,
+            Long: 17
+        },
+        "Fully Colored": {
+            A4: 17,
+            Short: 15,
+            Long: 20
+        }
+    },
+
+    "Text and Image": {
+        "Black & White": {
+            A4: 7,
+            Short: 7,
+            Long: 8
+        },
+        "Partially Colored": {
+            A4: 9,
+            Short: 9,
+            Long: 10
+        },
+        "Fully Colored": {
+            A4: 12,
+            Short: 12,
+            Long: 15
+        }
+    }
+};
+
+document
+    .getElementById("documentColor")
+    .addEventListener("change", updateDocumentPrice);
+
+document
+    .getElementById("documentSize")
+    .addEventListener("change", updateDocumentPrice);
+
+document
+    .getElementById("documentQty")
+    .addEventListener("input", updateDocumentPrice);
+
+function updateDocumentPrice() {
+    const color = document.getElementById("documentColor").value;
+    const size = document.getElementById("documentSize").value;
+    const qty =
+        Number(document.getElementById("documentQty").value) || 1;
+
+    let price = 0;
+
+    if (selectedDocumentService === "Front Page") {
+        price =
+            {
+                A4: 17,
+                Short: 16,
+                Long: 20
+            }[size] || 0;
+    } else {
+        price =
+            documentPrices[selectedDocumentService]?.[color]?.[size] || 0;
+    }
+
+    document.getElementById("documentPrice").textContent =
+        "₱" + price * qty;
+}
+
+function backToDocumentServices() {
+    showPage(documentPage);
+}
+
+async function continueDocument() {
+    const size = document.getElementById("documentSize").value;
+    const color = document.getElementById("documentColor").value;
+    const fileInput = document.getElementById("documentUpload");
+
+    if (!fileInput || fileInput.files.length === 0) {
+        alert("Please upload your document/file.");
+        return;
+    }
+
+    const file = fileInput.files[0];
+
+    if (!size) {
+        alert("Please select a paper size.");
+        return;
+    }
+
+    if (
+        selectedDocumentService !== "Front Page" &&
+        !color
+    ) {
+        alert("Please select the color type.");
+        return;
+    }
+
+    updateDocumentPrice();
+
+    const priceText =
+        document.getElementById("documentPrice").textContent;
+
+    const price =
+        Number(priceText.replace("₱", "")) || 0;
+
+    const fileData = await fileToBase64(file);
+
+    currentOrder = {
+        product: "Document Printing",
+
+        detail:
+            selectedDocumentService +
+            " • " +
+            size +
+            (color ? " • " + color : ""),
+
+        price: price,
+
+        file: fileData
+    };
+
+    showSummary();
+}
+
+function selectPolaroid(finish) {
+    selectedPolaroidFinish = finish;
+    polaroidQty = 1;
+
+    document.getElementById("polaroidTitle").textContent =
+        finish + " Polaroid Prints";
+
+    // Kunin ang sample image elements
+    const exampleImage =
+        document.getElementById("selectedPolaroidExampleImage");
+
+    const exampleText =
+        document.getElementById("selectedPolaroidExampleText");
+
+    // GLOSSY
+    if (finish === "Glossy") {
+        exampleImage.src = "images/polaroid-glossy.jpg";
+        exampleImage.alt = "Glossy Polaroid example";
+        exampleText.textContent = "GLOSSY";
+    }
+
+    // SATIN
+    if (finish === "Satin") {
+        exampleImage.src = "images/polaroid-satin.jpg";
+        exampleImage.alt = "Satin Polaroid example";
+        exampleText.textContent = "SATIN";
+    }
+
+    updatePolaroidDisplay();
+    showPage(polaroidOptionsPage);
+}
+
+function updatePolaroidDisplay() {
+    const unit =
+        selectedPolaroidFinish === "Satin"
+            ? 45
+            : 30;
+
+    document.getElementById("polaroidQty").textContent =
+        polaroidQty;
+
+    document.getElementById("photoCount").textContent =
+        polaroidQty * 10;
+
+    document.getElementById("polaroidPrice").textContent =
+        "₱" + unit * polaroidQty;
+}
+
+function changePolaroidQty(amount) {
+    polaroidQty = Math.max(
+        1,
+        polaroidQty + amount
+    );
+
+    updatePolaroidDisplay();
+}
+
+function backToPolaroid() {
+    showPage(polaroidPage);
+}
+
+function continuePolaroid() {
+    const files =
+        document.getElementById("polaroidUpload").files;
+
+    const required = polaroidQty * 10;
+
+    if (files.length !== required) {
+        alert(
+            "Please upload exactly " +
+            required +
+            " pictures."
+        );
+        return;
+    }
+
+    const unit =
+        selectedPolaroidFinish === "Satin"
+            ? 45
+            : 30;
+
+    currentOrder = {
+        product: "Polaroid Prints",
+        detail:
+            selectedPolaroidFinish +
+            " • " +
+            required +
+            " pcs",
+        price: unit * polaroidQty
+    };
+
+    showSummary();
+}
+
+function escapeHTML(value) {
+    return String(value).replace(
+        /[&<>"']/g,
+        char =>
+            ({
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#039;"
+            })[char]
+    );
+}
+
+function showSummary() {
+    const customerData = JSON.parse(
+        localStorage.getItem("renzPrintsCustomer") || "{}"
+    );
+
+    document.getElementById("summaryContent").innerHTML = `
+        <p><strong>Customer:</strong> ${escapeHTML(customerData.fullName || "")}</p>
+        <p><strong>Contact:</strong> ${escapeHTML(customerData.contact || "")}</p>
+        <p><strong>Grade & Section:</strong> ${escapeHTML(customerData.section || "")}</p>
+        <hr>
+        <p><strong>Product:</strong> ${escapeHTML(currentOrder.product)}</p>
+        <p><strong>Details:</strong> ${escapeHTML(currentOrder.detail)}</p>
+        <h3>Total: ₱${currentOrder.price}</h3>
+    `;
+
+    showPage(summaryPage);
+}
+
+/* ========================================
+   FILE → BASE64
+======================================== */
+
+function fileToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+
+        reader.onload = () => {
+            const base64 = reader.result.split(",")[1];
+
+            resolve({
+                name: file.name,
+                type: file.type,
+                base64: base64
+            });
+        };
+
+        reader.onerror = () => {
+            reject(
+                new Error(
+                    "Failed to read file: " + file.name
+                )
+            );
+        };
+
+        reader.readAsDataURL(file);
+    });
+}
+
+
+/* ========================================
+   OPEN POLAROID
+======================================== */
+
+function openPolaroid() {
+    showPage(polaroidPage);
+}
+function openMiniPhotoStrips() {
+    showPage(miniPhotoStripsPage);
+}
+function openBundle() {
+    showPage(bundlePage);
+}
+
+/* ========================================
+   SUBMIT ORDER
+======================================== */
+
+async function submitOrder() {
+
+    const customerData = JSON.parse(
+        localStorage.getItem("renzPrintsCustomer") || "{}"
+    );
+
+    if (
+        !customerData.fullName ||
+        !customerData.contact ||
+        !customerData.section
+    ) {
+        alert("Customer information is incomplete.");
+        return;
+    }
+
+    if (!currentOrder) {
+        alert("No order found.");
+        return;
+    }
+
+    const submitButton = document.querySelector(
+        "#summaryPage .continue-btn"
+    );
+
+    if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+    }
+
+    try {
+
+        const files = [];
+
+        // DOCUMENT
+        const documentInput = document.getElementById(
+            "documentUpload"
+        );
+
+        if (
+            documentInput &&
+            documentInput.files.length > 0
+        ) {
+            for (const file of documentInput.files) {
+                files.push(await fileToBase64(file));
+            }
+        }
+
+        // POLAROID
+        const polaroidInput = document.getElementById(
+            "polaroidUpload"
+        );
+
+        if (
+            polaroidInput &&
+            polaroidInput.files.length > 0
+        ) {
+            for (const file of polaroidInput.files) {
+                files.push(await fileToBase64(file));
+            }
+        }
+
+        // ACRYLIC
+        const acrylicInputs = [
+            "acrylic35Upload",
+            "acrylic28Upload",
+            "acrylicPictureUpload",
+            "acrylicSongUpload"
+        ];
+
+        for (const inputId of acrylicInputs) {
+
+            const input = document.getElementById(inputId);
+
+            if (
+                input &&
+                input.files.length > 0
+            ) {
+                for (const file of input.files) {
+                    files.push(await fileToBase64(file));
+                }
+            }
+        }
+        // MINI PHOTO STRIPS
+const miniPhotoStripsInput =
+    document.getElementById("miniPhotoStripsUpload");
+
+if (
+    miniPhotoStripsInput &&
+    miniPhotoStripsInput.files.length > 0
+) {
+    for (const file of miniPhotoStripsInput.files) {
+        files.push(await fileToBase64(file));
+    }
+}
+// 3-IN-1 BUNDLE
+const bundleInput =
+    document.getElementById("bundleUpload");
+
+if (
+    bundleInput &&
+    bundleInput.files.length > 0
+) {
+    for (const file of bundleInput.files) {
+        files.push(await fileToBase64(file));
+    }
+}
+
+
+        // ==============================
+        // SEND TO GOOGLE APPS SCRIPT
+        // ==============================
+
+       const response = await fetch(
+    "https://script.google.com/macros/s/AKfycbxw8rdG7PfrcLBPno0WZsTRIUnPtba96NOrjqA1IVKvHnUXO3fCKT4OsBNEP278OdLcxg/exec",
+            {
+                method: "POST",
+                mode: "no-cors",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                },
+                body: JSON.stringify({
+                    customer: customerData,
+                    order: currentOrder,
+                    files: files
+                })
+            }
+        );
+
+        // Save last order locally
+        localStorage.setItem(
+            "renzPrintsLastOrder",
+            JSON.stringify({
+                customer: customerData,
+                order: currentOrder,
+                date: new Date().toISOString()
+            })
+        );
+
+        // Show success page
+        showPage(successPage);
+
+    } catch (error) {
+
+        console.error("Submit error:", error);
+
+        alert(
+            "Hindi na-submit ang order. Please try again."
+        );
+
+        if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = "Submit Order";
+        }
+    }
+}
+function submitMiniPhotoStripsOrder() {
+
+    const miniPhotoStripsInput =
+        document.getElementById("miniPhotoStripsUpload");
+
+    if (
+        !miniPhotoStripsInput ||
+        miniPhotoStripsInput.files.length === 0
+    ) {
+        alert("Please choose your pictures first.");
+        return;
+    }
+
+    currentOrder = {
+        product: "Buy 1 Take 1 Mini Photo Strips",
+        detail: "Select Best 3 Pictures",
+        price: 30,
+        quantity: 1
+    };
+
+    showSummary();
+}
+function submitBundleOrder() {
+
+    const bundleInput =
+        document.getElementById("bundleUpload");
+
+    if (
+        !bundleInput ||
+        bundleInput.files.length === 0
+    ) {
+        alert("Please choose your pictures first.");
+        return;
+    }
+
+    currentOrder = {
+        product: "3-in-1 Bundle",
+        detail: "Acrylic + Photo Strips + 3 pcs Polaroid",
+        price: 80,
+        quantity: 1
+    };
+
+    showSummary();
+}
+
+/* ========================================
+   MAKE FUNCTIONS AVAILABLE TO HTML
+======================================== */
+
+window.submitOrder = submitOrder;
+
+window.continueDocument = continueDocument;
+
+window.continueAcrylic = continueAcrylic;
+
+window.continuePolaroid = continuePolaroid;
+
+window.openAcrylic = openAcrylic;
+
+window.openDocument = openDocument;
+
+window.openPolaroid = openPolaroid;
+
+window.selectAcrylicSize = selectAcrylicSize;
+
+window.chooseAcrylicType = chooseAcrylicType;
+
+window.selectDocumentService = selectDocumentService;
+
+window.selectPolaroid = selectPolaroid;
+
+window.changePolaroidQty = changePolaroidQty;
+
+window.backToProducts = backToProducts;
+
+window.backToAcrylicSize = backToAcrylicSize;
+
+window.backToDocumentServices = backToDocumentServices;
+
+window.backToPolaroid = backToPolaroid;
+
+</script>
+
+</body>
+</html>
